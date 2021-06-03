@@ -10,44 +10,48 @@ function playRound(playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
     let winMsg = "Great! You win this round!";
     let loseMsg = "Oh no! You lose this round!";
+    let status = `You: ${playerSelection} | Computer: ${computerSelection}`
 
     if (player == computerSelection) {
-        console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-        It's a tie!`)
+        console.log("It's a tie!")
+        console.log(`You: ${playerSelection} | Computer: ${computerSelection}`)
     } else if (player == "rock" && computerSelection == "scissors") {
-        console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-        ${winMsg}`)
+        console.log(winMsg)
+        console.log(status)
         playerScore++
     } else if (player == "rock" && computerSelection == "paper") {
-        console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-        ${loseMsg}`)
+        console.log(loseMsg)
+        console.log(status)
         computerScore++
     } else if (player == "paper" && computerSelection == "scissors") {
-        console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-        ${loseMsg}`)
+        console.log(loseMsg)
+        console.log(status)
         computerScore++
     } else if (player == "paper" && computerSelection == "rock") {
-        console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-        ${winMsg}`)
+        console.log(winMsg)
+        console.log(status)
         playerScore++
     } else if (player == "scissors" && computerSelection == "paper") {
-        console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-        ${winMsg}`)
+        console.log(winMsg)
+        console.log(status)
         playerScore++
     } else if (player == "scissors" && computerSelection == "rock") {
-        console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-        ${loseMsg}`)
+        console.log(loseMsg)
+        console.log(status)
         computerScore++
+    } else {
+        console.log("Invalid input!")
     }
     console.log(`Current Score: 
     You ${playerScore}
     Computer ${computerScore}`)
 }
 
-let playerSelection = "rock"
+let playerSelection
 
 function game() {
     while (playerScore < 5 && computerScore < 5) {
+        playerSelection = playerSelection = prompt("Enter 'Rock, Paper or Scissors'", computerPlay());
         playRound(playerSelection, computerPlay());
     }
     console.log(playerScore == 5 ? "You won the game!" : "You lost the game...");
