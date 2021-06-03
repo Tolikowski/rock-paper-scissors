@@ -44,11 +44,14 @@ function playRound(playerSelection, computerSelection) {
     Computer ${computerScore}`)
 }
 
-let computerSelection = computerPlay();
 let playerSelection = "rock"
 
 function game() {
-
+    while (playerScore < 5 && computerScore < 5) {
+        playRound(playerSelection, computerPlay());
+    }
+    console.log(playerScore == 5 ? "You won the game!" : "You lost the game...");
+    console.log("Press F5 to play again.")
 }
 
-console.log(playRound(playerSelection, computerSelection));
+console.log(game());
