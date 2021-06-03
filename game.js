@@ -1,4 +1,6 @@
 let options = ["rock", "paper", "scissors"];
+let playerScore = 0;
+let computerScore = 0;
 
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)]
@@ -15,25 +17,38 @@ function playRound(playerSelection, computerSelection) {
     } else if (player == "rock" && computerSelection == "scissors") {
         console.log(`You: ${playerSelection} | Computer: ${computerSelection}
         ${winMsg}`)
+        playerScore++
     } else if (player == "rock" && computerSelection == "paper") {
         console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-                ${loseMsg}`)
+        ${loseMsg}`)
+        computerScore++
     } else if (player == "paper" && computerSelection == "scissors") {
         console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-                ${loseMsg}`)
+        ${loseMsg}`)
+        computerScore++
     } else if (player == "paper" && computerSelection == "rock") {
         console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-                ${winMsg}`)
+        ${winMsg}`)
+        playerScore++
     } else if (player == "scissors" && computerSelection == "paper") {
         console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-                ${winMsg}`)
+        ${winMsg}`)
+        playerScore++
     } else if (player == "scissors" && computerSelection == "rock") {
         console.log(`You: ${playerSelection} | Computer: ${computerSelection}
-                ${loseMsg}`)
+        ${loseMsg}`)
+        computerScore++
     }
+    console.log(`Current Score: 
+    You ${playerScore}
+    Computer ${computerScore}`)
 }
 
 let computerSelection = computerPlay();
 let playerSelection = "rock"
+
+function game() {
+
+}
 
 console.log(playRound(playerSelection, computerSelection));
