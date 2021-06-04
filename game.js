@@ -6,8 +6,6 @@ let rockBtn = document.getElementById("rock");
 let paperBtn = document.getElementById("paper");
 let scissorsBtn = document.getElementById("scissors");
 
-//rockBtn.addEventListener("click", playRound("rock", computerPlay()));
-
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)]
 }
@@ -48,6 +46,8 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log("Invalid input!")
     }
+    document.getElementById("yourScore").innerHTML = `You: ${playerScore}`;
+    document.getElementById("compScore").innerHTML = `Computer: ${computerScore}`;
     console.log(`Current Score: 
     You ${playerScore}
     Computer ${computerScore}`)
