@@ -58,4 +58,4 @@ function game() {
     console.log("Press F5 to play again.")
 }
 
-console.log(game());
+//console.log(game());
