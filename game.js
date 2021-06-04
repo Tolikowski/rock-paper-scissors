@@ -2,6 +2,12 @@ let options = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
+let rockBtn = document.getElementById("rock");
+let paperBtn = document.getElementById("paper");
+let scissorsBtn = document.getElementById("scissors");
+
+//rockBtn.addEventListener("click", playRound("rock", computerPlay()));
+
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)]
 }

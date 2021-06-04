@@ -18,12 +18,13 @@
             <div>Computer: 0</div>
         </div>
         <div>
-            <div>Choose your weapon!</div>
+            <div id="status"></div>
+            <div id="msg">Choose your weapon!</div>
         </div>
         <div>
-            <button>Rock</button>
-            <button>Paper</button>
-            <button>Scissors</button>
+            <button id="rock" onclick="playRound('rock', computerPlay())">Rock</button>
+            <button id="paper" onclick="playRound('paper', computerPlay())">Paper</button>
+            <button id="scissors" onclick="playRound('scissors', computerPlay())">Scissors</button>
         </div>
     </div>
 </body>
