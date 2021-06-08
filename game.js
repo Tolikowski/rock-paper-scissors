@@ -17,7 +17,9 @@ function playRound(playerSelection, computerSelection) {
     let status = `You: ${playerSelection} | Computer: ${computerSelection}`
 
     function showStatus() {
-        document.getElementById("status").innerHTML = status;
+        //document.getElementById("status").innerHTML = status;
+        document.getElementById("comp").innerHTML = "Computer chose " + computerSelection;
+        document.getElementById("player").innerHTML = "You chose " + playerSelection;
     }
 
     function updateMsg(msg) {
