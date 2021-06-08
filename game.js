@@ -2,16 +2,13 @@ let options = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
-let rockBtn = document.getElementById("rock");
-let paperBtn = document.getElementById("paper");
-let scissorsBtn = document.getElementById("scissors");
-
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)]
 }
 
 
 function playRound(playerSelection, computerSelection) {
+    let btns = document.getElementById("btn-container");
     let player = playerSelection.toLowerCase();
 
     function showStatus() {
@@ -55,15 +52,13 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log("Invalid input!")
     }
-}
 
-function game() {
-    while (playerScore < 5 && computerScore < 5) {
-        playerSelection = playerSelection = prompt("Enter 'Rock, Paper or Scissors'", computerPlay());
-        playRound(playerSelection, computerPlay());
+    if (playerScore == 5) {
+        updateMsg("You won the game!");
+        btns.style.display = "none";
+
+    } else if (computerScore == 5) {
+        updateMsg("You lost the game...")
+        btns.style.display = "none";
     }
-    console.log(playerScore == 5 ? "You won the game!" : "You lost the game...");
-    console.log("Press F5 to play again.")
 }
-
-//console.log(game());
