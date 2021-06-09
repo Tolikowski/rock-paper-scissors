@@ -12,10 +12,10 @@ function playRound(playerSelection, computerSelection) {
     let player = playerSelection.toLowerCase();
 
     function showStatus() {
-        document.getElementById("comp").innerHTML = "Computer chose " + computerSelection;
-        document.getElementById("player").innerHTML = "You chose " + playerSelection;
-        document.getElementById("yourScore").innerHTML = `You: ${playerScore}`;
-        document.getElementById("compScore").innerHTML = `Computer: ${computerScore}`;
+        document.getElementById("comp").innerHTML = `<img src="img/comp-${computerSelection}.png" width="200px">`;
+        document.getElementById("player").innerHTML = `<img src="img/player-${playerSelection}.png" width="200px">`;
+        document.getElementById("yourScore").innerHTML = `You ${playerScore}`;
+        document.getElementById("compScore").innerHTML = `${computerScore} Computer`;
     }
 
     function winRound() {
