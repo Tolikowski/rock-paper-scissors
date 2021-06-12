@@ -2,3 +2,26 @@
 #status div {
     display: inline;
 }
+
+.main {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "header header" "scoreboard scoreboard" "display display" "btncontainer btncontainer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.score-board {
+    grid-area: scoreboard;
+}
+
+.display {
+    grid-area: display;
+}
+
+#btn-container {
+    grid-area: btncontainer;
+}

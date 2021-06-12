@@ -14,8 +14,8 @@ function playRound(playerSelection, computerSelection) {
     function showStatus() {
         document.getElementById("comp").innerHTML = `<img src="img/comp-${computerSelection}.png" width="200px">`;
         document.getElementById("player").innerHTML = `<img src="img/player-${playerSelection}.png" width="200px">`;
-        document.getElementById("yourScore").innerHTML = `You ${playerScore}`;
-        document.getElementById("compScore").innerHTML = `${computerScore} Computer`;
+        document.getElementById("yourScore").innerHTML = playerScore;
+        document.getElementById("compScore").innerHTML = computerScore;
     }
 
     function winRound() {
