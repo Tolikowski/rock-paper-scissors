@@ -1,3 +1,7 @@
+body {
+    background-color: #f5f5f5;
+}
+
 .score-board div,
 #status div {
     display: inline;
@@ -8,10 +12,13 @@
     grid-template-rows: auto auto auto auto;
     grid-template-areas: "header" "scoreboard" "display" "btncontainer";
     margin: auto;
-    margin-top: 20px;
+    margin-top: 50px;
     justify-content: center;
     background-color: cornsilk;
     max-width: 500px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    box-shadow: 7px 7px 15px #d0d0d0, -7px -7px 15px #ffffff;
 }
 
 .item {
@@ -20,23 +27,33 @@
 
 .header {
     grid-area: header;
-    background-color: aqua;
 }
 
 .score-board {
     grid-area: scoreboard;
-    background-color: greenyellow;
 }
 
 .display {
     grid-area: display;
-    background-color: darkgrey;
     text-align: center;
     padding: 5px;
 }
 
 #btn-container {
-    padding: 5px;
+    padding: 30px;
     grid-area: btncontainer;
-    background-color: coral;
+}
+
+.play-btn {
+    width: 125px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: #1ab2ff;
+}
+
+.play-btn:hover {
+    cursor: pointer;
+    color: white;
+    background: #0092db;
 }
