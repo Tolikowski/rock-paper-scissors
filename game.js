@@ -1,14 +1,27 @@
 let options = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
+let btns = document.getElementById("btn-container");
 
 function computerPlay() {
     return options[Math.floor(Math.random() * options.length)]
 }
 
+function playAgain() {
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById("comp").innerHTML = `<img src="img/computer.png" width="200px">`;
+    document.getElementById("player").innerHTML = `<img src="img/player.png" width="200px">`;
+    document.getElementById("yourScore").innerHTML = playerScore;
+    document.getElementById("compScore").innerHTML = computerScore;
+    document.getElementById("msg").innerHTML = "Choose your weapon!";
+    btns.style.display = "inline";
+    document.getElementById("again").style.display = "none";
+}
+
 
 function playRound(playerSelection, computerSelection) {
-    let btns = document.getElementById("btn-container");
+    btns = document.getElementById("btn-container");
     let player = playerSelection.toLowerCase();
 
     function showStatus() {
@@ -56,9 +69,11 @@ function playRound(playerSelection, computerSelection) {
     if (playerScore == 5) {
         updateMsg("You won the game!");
         btns.style.display = "none";
+        document.getElementById("again").style.display = "inline"
 
     } else if (computerScore == 5) {
         updateMsg("You lost the game...")
         btns.style.display = "none";
+        document.getElementById("again").style.display = "inline"
     }
 }

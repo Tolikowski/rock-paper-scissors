@@ -69,3 +69,9 @@ body {
     color: white;
     background: #0092db;
 }
+
+#again {
+    display: none;
+    justify-self: center;
+    margin: 30px;
+}
