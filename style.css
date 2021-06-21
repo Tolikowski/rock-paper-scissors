@@ -5,23 +5,38 @@
 
 .main {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "header header" "scoreboard scoreboard" "display display" "btncontainer btncontainer";
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: "header" "scoreboard" "display" "btncontainer";
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+    background-color: cornsilk;
+    max-width: 500px;
+}
+
+.item {
+    justify-self: center;
 }
 
 .header {
     grid-area: header;
+    background-color: aqua;
 }
 
 .score-board {
     grid-area: scoreboard;
+    background-color: greenyellow;
 }
 
 .display {
     grid-area: display;
+    background-color: darkgrey;
+    text-align: center;
+    padding: 5px;
 }
 
 #btn-container {
+    padding: 5px;
     grid-area: btncontainer;
+    background-color: coral;
 }
