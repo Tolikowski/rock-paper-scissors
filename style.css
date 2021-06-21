@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@700&display=swap');
 body {
     background-color: #f5f5f5;
+    font-family: 'Roboto', sans-serif;
 }
 
 .score-board div,
@@ -27,16 +29,26 @@ body {
 
 .header {
     grid-area: header;
+    font-family: 'Roboto Mono', monospace;
+    color: #001638;
+    margin-bottom: 20px;
 }
 
 .score-board {
     grid-area: scoreboard;
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
 .display {
     grid-area: display;
     text-align: center;
     padding: 5px;
+}
+
+#msg {
+    margin-top: 20px;
+    font-family: 'Roboto Mono', monospace;
 }
 
 #btn-container {
