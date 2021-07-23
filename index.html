@@ -4,7 +4,6 @@
 <head>
     <title>Rock Paper Scissors</title>
     <meta charset="UTF-8" />
-    <script src="game.js"></script>
     <link href="normalize.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
 
@@ -27,12 +26,13 @@
             <div id="msg">Choose your weapon!</div>
         </div>
         <div id="btn-container" class="item">
-            <button class="play-btn" id="rock" onclick="playRound('rock', computerPlay())">Rock</button>
-            <button class="play-btn" id="paper" onclick="playRound('paper', computerPlay())">Paper</button>
-            <button class="play-btn" id="scissors" onclick="playRound('scissors', computerPlay())">Scissors</button>
+            <button class="play-btn" id="rock">Rock</button>
+            <button class="play-btn" id="paper">Paper</button>
+            <button class="play-btn" id="scissors">Scissors</button>
         </div>
-        <button class="play-btn" id="again" onclick="playAgain()">Play Again</button>
+        <button class="play-btn" id="again">Play Again</button>
     </div>
+    <script src="game.js"></script>
 </body>
 
 </html>
