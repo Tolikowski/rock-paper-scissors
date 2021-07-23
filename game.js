@@ -4,8 +4,8 @@ let playerScore = 0;
 let computerScore = 0;
 
 //address images and score
-const compImg = document.getElementById("comp");
-const playerImg = document.getElementById("player");
+const comp = document.querySelector("#comp img");
+const player = document.querySelector("#player img");
 const yourScoreDisplay = document.getElementById("yourScore");
 const compScoreDisplay = document.getElementById("compScore");
 
@@ -22,50 +22,40 @@ function computerPlay() {
 }
 //play round with value of player action and computer selection (defined by computerPlay())
 function playRound(playerSelection, computerSelection) {
-    let player = playerSelection.toLowerCase();
 
     //update display and score depending on input
     function showStatus() {
-        compImg.innerHTML = `<img src="img/comp-${computerSelection}.png" width="200px">`;
-        playerImg.innerHTML = `<img src="img/player-${playerSelection}.png" width="200px">`;
+        comp.src = `img/comp-${computerSelection}.png`;
+        player.src = `img/player-${playerSelection}.png`;
         yourScoreDisplay.textContent = playerScore;
         compScoreDisplay.textContent = computerScore;
     }
 
-    //update display and score
-    function winRound() {
-        updateMsg("Great! You win this round!");
-        playerScore++;
-        showStatus();
-    }
-
-    //update display and score
-    function loseRound() {
-        updateMsg("Oh no! You lose this round!");
-        computerScore++;
-        showStatus();
-    }
 
     //display message with property of msg
     function updateMsg(msg) {
         document.getElementById("msg").textContent = msg;
     }
     //Tie condition
-    if (player == computerSelection) {
+    if (playerSelection == computerSelection) {
         showStatus()
         updateMsg("It's a tie!")
 
-    } else if (player == "rock" && computerSelection == "scissors" ||
-        player == "paper" && computerSelection == "rock" ||
-        player == "scissors" && computerSelection == "paper") {
+    } else if (playerSelection == "rock" && computerSelection == "scissors" ||
+        playerSelection == "paper" && computerSelection == "rock" ||
+        playerSelection == "scissors" && computerSelection == "paper") {
         //conditions for winning round
-        winRound();
+        updateMsg("Great! You win this round!");
+        playerScore++;
+        showStatus();
 
-    } else if (player == "rock" && computerSelection == "paper" ||
-        player == "paper" && computerSelection == "scissors" ||
-        player == "scissors" && computerSelection == "rock") {
+    } else if (playerSelection == "rock" && computerSelection == "paper" ||
+        playerSelection == "paper" && computerSelection == "scissors" ||
+        playerSelection == "scissors" && computerSelection == "rock") {
         // conditions for losing round
-        loseRound();
+        updateMsg("Oh no! You lose this round!");
+        computerScore++;
+        showStatus();
     } else {
         console.log("Invalid input!")
     }
@@ -87,8 +77,8 @@ function playRound(playerSelection, computerSelection) {
 function playAgain() {
     playerScore = 0;
     computerScore = 0;
-    compImg.innerHTML = `<img src="img/computer.png" width="200px">`;
-    playerImg.innerHTML = `<img src="img/player.png" width="200px">`;
+    comp.src = "img/computer.png";
+    player.src = "img/player.png";
     yourScoreDisplay.textContent = playerScore;
     compScoreDisplay.textContent = computerScore;
     document.getElementById("msg").textContent = "Choose your weapon!";
